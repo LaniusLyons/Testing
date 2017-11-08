@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="utf-8">
+	<title>VueJs</title>
+	<style type="text/css">
+		.error{
+			color:#ff0000;
+		}
+	</style>
+</head>
+<body>
+
+	<div id="app">
+
+		<counter subject="Likes"></counter>
+		<counter subject="Dislikes"></counter>
+
+	</div>
+
+	<template id="counter-template">
+		<h1> {{subject}} </h1>
+		<button @click="count += 1"> {{count}}</button>
+	</template>
+
+	<script src="http://cdnjs.cloudflare.com/ajax/libs/vue/1.0.1/vue.js"></script>
+	<script type="text/javascript">
+
+		/*Vue.component('counter',{
+			template: '#counter-template',
+			props: ['subject'],
+			data: ()=>{
+				return {
+					count: 0
+				};
+			}
+		});*/
+		
+		new Vue({
+			el: '#app',
+
+			components: {
+				counter: {
+					template: '#counter-template',
+					props: ['subject'],
+					data: ()=>{
+						return {
+							count: 0
+						};
+			}
+				}
+			}
+		});
+
+	</script>
+
+</body>
+</html>

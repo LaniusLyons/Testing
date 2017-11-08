@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="utf-8">
+	<title>VueJs</title>
+	<style type="text/css">
+		.error{
+			color:#ff0000;
+		}
+		.completed { text-decoration: line-through; }
+	</style>
+</head>
+<body>
+
+	<div id="app">
+
+	<ul>
+		<li :class="{ completed : task.completed }" 
+			v-for="task in tasks"
+			@click="task.completed =! task.completed"
+		>{{task.body}}</li>
+	</ul>
+
+	</div>
+
+	<script src="http://cdnjs.cloudflare.com/ajax/libs/vue/1.0.1/vue.js"></script>
+	<script type="text/javascript" src="main.js"></script>
+
+</body>
+</html>
